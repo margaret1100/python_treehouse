@@ -1,0 +1,29 @@
+import matplotlib
+
+import sys
+!{sys.executable} -m pip install --upgrade pip
+!{sys.executable} -m pip install msgpack
+!{sys.executable} -m pip install matplotlib
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+plt.plot([1,2,3,4], [1,4,9,16], color = 'green', linestyle = 'dashdot', label = 'dash-dot')
+plt.plot([2,3,4,5], [2,3,4,5], color = '#2B5B84', linestyle = 'dashed', label= 'dashed')
+plt.ylabel('Important Figures')
+plt.legend()
+plt.show()
+
+#create the first pannel
+panel_1 = plt.subplot(2,1,1)
+plt.plot([1,2,3,4], [1,4,9,16], color = 'green', linestyle = 'dashdot')
+panel_1.set_xlim(0,6)
+panel_1.set_ylim(0,20)
+
+#create second pane
+panel_2 = plt.subplot(2,1,2)
+plt.plot([2,3,4,5], [2,3,4,5], color = '#2B5B84', linestyle = 'dashed')
+panel_2.set_xlim(0,6)
+panel_2.set_ylim(0,20)
+plt.title('tree')
+
+plt.show()
